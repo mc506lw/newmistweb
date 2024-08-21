@@ -1,0 +1,130 @@
+.cmd-container {
+    /* 定义命令行容器的基本样式，包括宽度、最大宽度、背景颜色、边框、圆角、内边距、溢出处理、高度、布局方向、间距和外边距 */
+    width: 100%;
+    background-color: #2c3e50;
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-y: auto;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 10px;
+    max-height: 350px;
+    margin-top: 20px;
+}
+
+/* 如果需要模拟窗口控制按钮（非功能性的视觉效果） */
+/* 调整窗口控制按钮的位置到右上角 */
+.cmd-div::after {
+    content: "";
+    position: absolute;
+    top: 10px; /* 调整顶部距离以靠近窗口上边缘 */
+    width: 16px;
+    height: 16px;
+    background-color: #333;
+    border-radius: 50%;
+    cursor: default;
+}
+
+.close-button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 16px;
+    height: 16px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    cursor: default;
+}
+
+.cmd-div::after { /* 模拟最小化按钮 */
+    right: 22px;
+    top:0px;
+    background: #f1c40f;
+}
+
+.cmd-title {
+    position: absolute;
+    /* 直接贴顶 */
+    left: 1rem;
+    /* 距离左边的距离 */
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.cmd-container::-webkit-scrollbar {
+    /* 定义命令行容器滚动条的宽度 */
+    width: 8px;
+}
+
+.cmd-container::-webkit-scrollbar-track {
+    /* 定义命令行容器滚动条轨道的背景颜色 */
+    background-color: transparent;
+}
+
+.cmd-container::-webkit-scrollbar-thumb {
+    /* 定义命令行容器滚动条滑块的背景颜色和圆角 */
+    background-color: #333;
+    border-radius: 4px;
+}
+
+.cmd-line {
+    /* 定义命令行每一行的基本样式，包括布局、对齐方式和文本换行 */
+    display: flex;
+    align-items: baseline;
+    white-space: pre-wrap;
+    color: #fff;
+}
+
+.cmd-prompt {
+    /* 定义命令行提示符的样式，包括用户选择和颜色 */
+    user-select: none;
+    color: #fff;
+}
+
+.cmd-input {
+    /* 定义命令行输入框的样式，包括显示方式、文本换行和颜色 */
+    display: inline-block;
+    white-space: pre;
+    color: #fff;
+}
+
+.cmd-cursor {
+    /* 定义命令行光标的样式，包括动画、用户选择和颜色 */
+    animation: blink 1s linear infinite;
+    user-select: none;
+    color: #fff;
+}
+
+.cmd-output {
+    /* 定义命令行输出内容的样式，包括颜色 */
+    color: #fff;
+}
+
+.cmd-output-help {
+    /* 定义命令行帮助信息的样式，包括颜色 */
+    color: #fff;
+}
+
+.cmd-output-error {
+    /* 定义命令行错误信息的样式，包括颜色 */
+    color: #9c0000;
+}
+
+@keyframes blink {
+
+    /* 定义光标闪烁动画的关键帧 */
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

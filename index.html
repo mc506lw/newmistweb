@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MistMC 官网 开发预览版</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="mccmd.css">
+    <link rel="stylesheet" type="text/css" href="carousel.css">
+    <link rel="stylesheet" type="text/css" href="team.css">
+    <link rel="stylesheet" type="text/css" href="other.css">
+    <link rel="stylesheet" type="text/css" href="join.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-left">
+            <b href="#">MistMC 官网</b>
+        </div>
+        <div class="navbar-center" id="clock">1</div>
+        <div class="navbar-right">
+            <a href="https://docs.mistmc.top/docs/start">文档站</a>
+            <a href="https://afdian.com/a/mistmc">赞助</a>
+            <a
+                href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=jGMwLuvRnoaBUnquvbw6hjN0Y9BMoPdG&authKey=aUhV9hfelSFQqbDyeNJcvcVNa3LgkHsLuWHOqptojl5lG7HMLQNXfcYc6KJH4nqU&noverify=0&group_code=807505406">QQ群</a>
+            <a href="#">关于</a>
+        </div>
+    </div>
+    <div class="hero">
+        <div class="background-image"></div>
+        <div class="text">
+            <h1>岚域服务器</h1>
+            <p>体验前所未有的生存体验，加入我们开启冒险之旅！</p>
+        </div>
+    </div>
+    <div class="servercard">
+        <div class="left-side">
+            <div class="carousel">
+                <div class="carouselcard">
+                    <img src="https://s21.ax1x.com/2024/08/09/pkz72e1.png" alt="Image 1">
+                    <img src="https://s21.ax1x.com/2024/08/09/pkz7jFf.png" alt="Image 2">
+                    <img src="https://s21.ax1x.com/2024/08/09/pkz7vY8.png" alt="Image 3">
+                </div>
+                <button class="carousel-button prev">《</button>
+                <button class="carousel-button next">》</button>
+            </div>
+            <div class="othercard">
+                <div class="docscard" onclick="window.open('https://docs.mistmc.top/docs/start')">
+                    <div class="title">岚域文档</div>
+                    <img src="https://s11.ax1x.com/2024/02/29/pFwbwkt.png">
+                    <div class="content">点击跳转到文档！</div>
+                </div>
+                <div class="status-right">
+                    <div class="statuscard">
+                        <div class="title">服务器信息</div>
+                        <div class="statusplayercard" id="statusplayercard">
+                            <!-- 在线状态指示器 -->
+                            <div class="status-indicator" id="statusIndicator"></div>
+                            <!-- 玩家人数，使用span方便插入emoji -->
+                            <div class="players" id="playerCount"><span></span></div>
+                            <div class="ping" id="ping"><span></span></div>
+                        </div>
+                    </div>
+                    <div class="joinqq" onclick="window.open('http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=jGMwLuvRnoaBUnquvbw6hjN0Y9BMoPdG&authKey=aUhV9hfelSFQqbDyeNJcvcVNa3LgkHsLuWHOqptojl5lG7HMLQNXfcYc6KJH4nqU&noverify=0&group_code=807505406')">
+                        <div class="qqtitle">🐧加入QQ群</div>
+                        <div class="qqid">807505406</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="cmd-div" style="position:relative;">
+                <div class="close-button"></div>
+                <div class="cmd-title">Mist 命令行</div>
+                <div class="cmd-container">
+                    <!-- 这里可以动态添加一些已有的命令行输出 -->
+                    <!-- 底部输入框 -->
+                    <div class="cmd-line">
+                        <span class="cmd-prompt">(Mist server) C:\Mist\MistMC> </span>
+                        <span class="cmd-input"></span>
+                        <span class="cmd-cursor">_</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="scrollButton" class="down-button">
+        <h2 class="down-text">向下滑动</h2>
+        <i class="down-arrow"></i>
+        <div class="floating-icon">⛛</div>
+    </div>
+    <div class="content-background">
+        <div class="content">
+            <h2 id="typingText">你想要的一切都在岚域</h2>
+            <p>生存 | 休闲 | 生电 | 粘液 | 闲聊 | 建筑 | 武器 | 活动 | 美食 | 自由市场 | 经济 | 铁路</p>
+            <div class="features">
+                <div>
+                    <h3>多样化生存体验</h3>
+                    <p>探索从自定义地形，建造自己的家园。</p>
+                    <img src="https://img.picui.cn/free/2024/08/21/66c5776e0ed28.png">
+                </div>
+                <div>
+                    <h3>休闲社交空间</h3>
+                    <p>专属休闲区供玩家交流心得，支持游戏内语音MOD。</p>
+                    <img src="https://img.picui.cn/free/2024/08/21/66c5776e181db.png">
+                </div>
+                <div>
+                    <h3>支持生电</h3>
+                    <p>深度支持原版特性，让刷沙机，刷怪塔成为可能。</p>
+                    <img src="https://img.picui.cn/free/2024/08/21/66c5776e0d228.png">
+                </div>
+                <div>
+                    <h3>超多额外支持</h3>
+                    <p>支持大量小功能，有趣设定。</p>
+                    <img src="https://img.picui.cn/free/2024/08/21/66c5776e0cecc.png">
+                </div>
+                <div>
+                    <h3>美食烹饪系统</h3>
+                    <p>引入复杂烹饪机制，享受从野外到餐桌的完整美食体验。</p>
+                    <img src="https://img.picui.cn/free/2024/08/21/66c5776ec3fe7.png">
+                </div>
+                <div>
+                    <h3>自由市场经济</h3>
+                    <p>玩家驱动的经济体系，商品价格由商品数量决定。</p>
+                    <img src="https://img.picui.cn/free/2024/08/21/66c5776e1bcc0.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="join-container">
+        <h2>加入我们</h2>
+        <div class="join">
+            <div class="line" data-copy-content="mc.mistmc.top">
+                <h3>主要线路</h3>
+                <div class="ip">mc.mistmc.top</div>
+                <p>保活 稳定性优先</p>
+                <p>[点击复制]</p>
+            </div>
+            <div class="line" data-copy-content="bj.mc.mistmc.top">
+                <h3>北方快速线路</h3>
+                <div class="ip">bj.mc.mistmc.top</div>
+                <p>速度优先 稳定性不高</p>
+                <p>[点击复制]</p>
+            </div>
+            <div class="line" data-copy-content="nf.mc.mistmc.top">
+                <h3>南方快速线路</h3>
+                <div class="ip">nf.mc.mistmc.top</div>
+                <p>均衡速度 稳定性优先</p>
+                <p>[点击复制]</p>
+            </div>
+            <div class="auto-line-card">
+                <div class="alc-left">
+                    <div class="auto-line">
+                        <h3>试试自动推荐线路?</h3>
+                        <button class="recommend-button">获取授权并开始推荐</button>
+                    </div>
+                </div>
+                <div class="alc-mid">
+                    <div class="alc-status">
+                        <h3 id="alc-status-text">等待您的授权...</h3>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-track">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <div class="progress-text"></div>
+                    </div>
+                </div>
+                <div class="alc-right">
+                    <div class="alc-content" id="resultContent">
+                        <!-- 获取完成后的内容将动态插入此处 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="team">
+        <h2>运营团队</h2>
+        <div class="master-container">
+            <div class="master">
+                <img id="master-img-1" src="https://img.picui.cn/free/2024/08/20/66c41e6735d2d.png" alt="Master"
+                    onclick="shakeImage(this)">
+                <h3>mc506lw</h3>
+                <p>岚域服务器的创始人，负责服务器的运营和维护。</p>
+            </div>
+            <div class="master">
+                <img id="master-img-2" src="https://img.picui.cn/free/2024/08/20/66c422a815d87.png" alt="Master"
+                    onclick="shakeImage(this)">
+                <h3>moshushi_mjs</h3>
+                <p>岚域服务器的管理人，负责服务器的运营和维护。</p>
+            </div>
+            <div class="master">
+                <img id="master-img-3" src="https://img.picui.cn/free/2024/08/20/66c422a817a53.png" alt="Master"
+                    onclick="shakeImage(this)">
+                <h3>DDbox_maoj</h3>
+                <p>岚域服务器的管理人，负责服务器的运营和维护。</p>
+            </div>
+        </div>
+    </div>
+    <script src="mcstutas.js"></script>
+    <script src="mccmd.js"></script>
+    <script src="carousel.js"></script>
+    <script src="typingText.js"></script>
+    <script src="scroll.js"></script>
+    <script src="other.js"></script>
+    <script src="clock.js"></script>
+    <script src="join.js"></script>
+</body>
+
+</html>

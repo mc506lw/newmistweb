@@ -1,0 +1,27 @@
+.master-container {
+    display: flex;
+    /* 启用Flex布局 */
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team h2 {
+    /* 你可以根据需要调整标题的样式，比如字体大小、颜色等 */
+    font-size: 24px;
+    color: #333;
+    /* 示例：给标题设置字体大小和颜色 */
+    text-align: center;
+}
+.master {
+    text-align: center;
+    margin: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #999;
+}
+
+.master img {
+    border: 5px solid #fff;
+    box-shadow: 0 0 10px #999;
+}

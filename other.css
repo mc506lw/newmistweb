@@ -1,0 +1,124 @@
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    /* 向左微动 */
+    50% {
+        transform: translateX(5px);
+    }
+
+    /* 向右微动 */
+    75% {
+        transform: translateX(-3px);
+    }
+
+    /* 再次向左微动，但幅度略小，使动作更自然 */
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out both;
+}
+
+.copy-target {
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    border: #6d6d6d solid 1px;
+    padding: 1px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    padding: 15px 20px;
+    background-color: #2E2E2E;
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1000;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+    /* 显示时恢复到正常位置 */
+}
+
+.toast strong {
+    font-weight: 600;
+}
+
+.toast::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 8px 8px;
+    border-color: transparent transparent #2E2E2E transparent;
+}
+
+
+.down-button {
+    bottom: 50px;
+    /* 水平居中 */
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    z-index: 999;
+    /* 确保按钮在最上层 */
+    cursor: pointer;
+    align-items: center;
+}
+
+.down-text {
+    font-size: 24px;
+    color: #333;
+    margin-top: -20px;
+}
+
+.floating-icon {
+    display: inline-block;
+    margin-top: 10px;
+    /* 根据需要调整与按钮的距离 */
+    animation: floatAnimation 2s ease-in-out infinite;
+    /* 动画名称、持续时间、速度曲线、无限循环 */
+    opacity: 1;
+    font-size: 2em;
+}
+
+@keyframes floatAnimation {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    /* 初始和结束位置 */
+    50% {
+        transform: translateY(-10px);
+    }
+
+    /* 中间位置，上浮10px，根据需要调整 */
+}
