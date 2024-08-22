@@ -33,14 +33,20 @@ body {
     /* 可根据需要调整内边距，以匹配原来的padding效果 */
     border-radius: 10px 10px 10px 10px;
     /* 左侧圆角 */
-    margin-top: 10px;
-    margin-left: 10px;
+    margin-top: 5%;
+    margin-left: 5%;
     width: 95px;
+}
+
+@media (max-width: 600px) {
+    .navbar-left {
+        display: none;
+    }
 }
 
 .navbar-center {
     margin: 0;
-    width: 200px;
+    max-width: 200px;
     cursor: pointer;
     /* 添加背景颜色和阴影到中间 */
     background-color: #f9f9f9;
@@ -254,7 +260,7 @@ body {
     /* 动态宽度，最大不超过90% */
     max-width: 600px;
     /* 限制最大宽度，适合更宽的屏幕 */
-    min-width: 400px;
+    min-width: 100px;
     text-align: center;
     margin: auto;
     margin-left: 30px;

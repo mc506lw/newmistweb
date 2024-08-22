@@ -1,7 +1,6 @@
 .join {
     display: flex;
-    margin-left: 150px;
-    margin-right: auto;
+    margin-left: 5%;
 }
 
 .join-container h2 {
@@ -14,8 +13,9 @@
     /* 半透明白色背景，适应任何背景图 */
     border-radius: 16px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    width: 10%;
-    margin-left: 40px;
+    width: 170px;
+    margin-left: 5%;
+    height: 220px;
 }
 
 .line h3,
@@ -35,17 +35,17 @@
     /* 半透明白色背景，适应任何背景图 */
     border-radius: 16px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    margin-left: 40px;
+    margin-left: 5%;
     display: flex;
 }
 
 .alc-left {
-    width: 220px;
-    margin-left: 30px;
+    width: 40%;
+    margin-left: 10%;
 }
 
 .alc-mid {
-    width: 200px;
+    max-width: 200px;
     margin-left: 10px;
     margin-right: 40px;
 }
@@ -105,4 +105,16 @@
 
 .alc-content {
     opacity: 1;
+}
+
+/* 手机适配 */
+
+@media (max-width: 899px) {
+    .auto-line-card {
+        display: none;
+    }
+    .join {
+        align-items: center;
+        flex-wrap: wrap;
+    }
 }
