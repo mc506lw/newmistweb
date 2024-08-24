@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MistMC 官网 开发预览版</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="stylesheet" type="text/css" href="mccmd.css">
-    <link rel="stylesheet" type="text/css" href="carousel.css">
-    <link rel="stylesheet" type="text/css" href="team.css">
-    <link rel="stylesheet" type="text/css" href="other.css">
-    <link rel="stylesheet" type="text/css" href="join.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/mccmd.css">
+    <link rel="stylesheet" type="text/css" href="css/carousel.css">
+    <link rel="stylesheet" type="text/css" href="css/team.css">
+    <link rel="stylesheet" type="text/css" href="css/other.css">
+    <link rel="stylesheet" type="text/css" href="css/join.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
 </head>
 
 <body>
@@ -20,13 +22,14 @@
         </div>
         <div class="navbar-center" id="clock">1</div>
         <div class="navbar-right">
-            <a href="https://docs.mistmc.top/docs/start">文档站</a>
-            <a href="https://afdian.com/a/mistmc">赞助</a>
+            <a href="https://docs.mistmc.top/docs/start" target="_blank">文档站</a>
+            <a href="https://afdian.com/a/mistmc" target="_blank">赞助</a>
             <a
-                href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=jGMwLuvRnoaBUnquvbw6hjN0Y9BMoPdG&authKey=aUhV9hfelSFQqbDyeNJcvcVNa3LgkHsLuWHOqptojl5lG7HMLQNXfcYc6KJH4nqU&noverify=0&group_code=807505406">QQ群</a>
+                href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=jGMwLuvRnoaBUnquvbw6hjN0Y9BMoPdG&authKey=aUhV9hfelSFQqbDyeNJcvcVNa3LgkHsLuWHOqptojl5lG7HMLQNXfcYc6KJH4nqU&noverify=0&group_code=807505406" target="_blank">QQ群</a>
             <a href="#">关于</a>
         </div>
     </div>
+    <div id="aplayer"></div>
     <div class="hero">
         <div class="background-image"></div>
         <div class="text">
@@ -62,7 +65,8 @@
                             <div class="ping" id="ping"><span></span></div>
                         </div>
                     </div>
-                    <div class="joinqq" onclick="window.open('http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=jGMwLuvRnoaBUnquvbw6hjN0Y9BMoPdG&authKey=aUhV9hfelSFQqbDyeNJcvcVNa3LgkHsLuWHOqptojl5lG7HMLQNXfcYc6KJH4nqU&noverify=0&group_code=807505406')">
+                    <div class="joinqq"
+                        onclick="window.open('http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=jGMwLuvRnoaBUnquvbw6hjN0Y9BMoPdG&authKey=aUhV9hfelSFQqbDyeNJcvcVNa3LgkHsLuWHOqptojl5lG7HMLQNXfcYc6KJH4nqU&noverify=0&group_code=807505406')">
                         <div class="qqtitle">🐧加入QQ群</div>
                         <div class="qqid">807505406</div>
                     </div>
@@ -70,16 +74,24 @@
             </div>
         </div>
         <div class="right-side">
-            <div class="cmd-div" style="position:relative;">
-                <div class="close-button"></div>
-                <div class="cmd-title">Mist 命令行</div>
-                <div class="cmd-container">
-                    <!-- 这里可以动态添加一些已有的命令行输出 -->
-                    <!-- 底部输入框 -->
-                    <div class="cmd-line">
-                        <span class="cmd-prompt">(Mist server) C:\Mist\MistMC> </span>
-                        <span class="cmd-input"></span>
-                        <span class="cmd-cursor">_</span>
+            <div class="joinbox">
+                <div class="join-left">
+                    <div class="ip-container" id="ip-container">
+                        <h2>万年不变的地址</h2>
+                        <div class="join-ip" id="server-ip" data-copy-content="mc.mistmc.top">mc.mistmc.top</div>
+                        <button class="join-copy-button">复制IP</button>
+                    </div>
+                    <div class="version">
+                        <h2>游戏版本</h2>
+                        <div class="version-select">1.20.4</div>
+                    </div>
+                </div>
+                <div class="mc-game-container">
+                    <h2>你的账号情况</h2>
+                    <div class="mc-game-options">
+                        <div id="mc-game-licensed" class="mc-game-option mc-game-option-licensed">我有正版</div>
+                        <div id="mc-game-unlicensed" class="mc-game-option mc-game-option-unlicensed">我没有正版</div>
+                        <div id="mc-game-reset" class="mc-game-reset">我点错了</div>
                     </div>
                 </div>
             </div>
@@ -128,49 +140,17 @@
             </div>
         </div>
     </div>
-    <div class="join-container">
-        <h2>加入我们</h2>
-        <div class="join">
-            <div class="line" data-copy-content="mc.mistmc.top">
-                <h3>主要线路</h3>
-                <div class="ip">mc.mistmc.top</div>
-                <p>保活 稳定性优先</p>
-                <p>[点击复制]</p>
-            </div>
-            <div class="line" data-copy-content="bj.mc.mistmc.top">
-                <h3>北方快速线路</h3>
-                <div class="ip">bj.mc.mistmc.top</div>
-                <p>速度优先 稳定性不高</p>
-                <p>[点击复制]</p>
-            </div>
-            <div class="line" data-copy-content="nf.mc.mistmc.top">
-                <h3>南方快速线路</h3>
-                <div class="ip">nf.mc.mistmc.top</div>
-                <p>均衡速度 稳定性优先</p>
-                <p>[点击复制]</p>
-            </div>
-            <div class="auto-line-card">
-                <div class="alc-left">
-                    <div class="auto-line">
-                        <h3>试试自动推荐线路?</h3>
-                        <button class="recommend-button">获取授权并开始推荐</button>
-                    </div>
-                </div>
-                <div class="alc-mid">
-                    <div class="alc-status">
-                        <h3 id="alc-status-text">等待您的授权...</h3>
-                    </div>
-                    <div class="progress-container">
-                        <div class="progress-track">
-                            <div class="progress-bar"></div>
-                        </div>
-                        <div class="progress-text"></div>
-                    </div>
-                </div>
-                <div class="alc-right">
-                    <div class="alc-content" id="resultContent">
-                        <!-- 获取完成后的内容将动态插入此处 -->
-                    </div>
+    <div class="cmd-w">
+        <div class="cmd-div" style="position:relative;">
+            <div class="close-button"></div>
+            <div class="cmd-title">Mist 命令行</div>
+            <div class="cmd-container">
+                <!-- 这里可以动态添加一些已有的命令行输出 -->
+                <!-- 底部输入框 -->
+                <div class="cmd-line">
+                    <span class="cmd-prompt">(Mist server) C:\Mist\MistMC> </span>
+                    <span class="cmd-input"></span>
+                    <span class="cmd-cursor">_</span>
                 </div>
             </div>
         </div>
@@ -198,14 +178,15 @@
             </div>
         </div>
     </div>
-    <script src="mcstutas.js"></script>
-    <script src="mccmd.js"></script>
-    <script src="carousel.js"></script>
-    <script src="typingText.js"></script>
-    <script src="scroll.js"></script>
-    <script src="other.js"></script>
-    <script src="clock.js"></script>
-    <script src="join.js"></script>
+    <script src="js/mcstutas.js"></script>
+    <script src="js/mccmd.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/typingText.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/other.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/join.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
 </body>
 
 </html>

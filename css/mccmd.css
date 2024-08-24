@@ -1,3 +1,23 @@
+.cmd-w {
+    position: relative;
+    width: 90%;
+    background-color: #2c3e50;
+    border: 1px solid #333;
+    border-radius: 12px;
+    /* 增加圆角模仿Mac窗口 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 添加阴影效果 */
+    padding: 1rem;
+    overflow: hidden;
+    /* 调整为隐藏，以避免内容影响窗口外观 */
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+    margin-top: 30px;
+    margin-right: 30px;
+    height: 380px;
+}
+
 .cmd-container {
     /* 定义命令行容器的基本样式，包括宽度、最大宽度、背景颜色、边框、圆角、内边距、溢出处理、高度、布局方向、间距和外边距 */
     width: 100%;
@@ -19,7 +39,8 @@
 .cmd-div::after {
     content: "";
     position: absolute;
-    top: 10px; /* 调整顶部距离以靠近窗口上边缘 */
+    top: 10px;
+    /* 调整顶部距离以靠近窗口上边缘 */
     width: 16px;
     height: 16px;
     background-color: #333;
@@ -38,9 +59,10 @@
     cursor: default;
 }
 
-.cmd-div::after { /* 模拟最小化按钮 */
+.cmd-div::after {
+    /* 模拟最小化按钮 */
     right: 22px;
-    top:0px;
+    top: 0px;
     background: #f1c40f;
 }
 

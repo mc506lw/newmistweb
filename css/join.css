@@ -1,0 +1,189 @@
+.joinbox {
+    display: flex;
+}
+
+.ip-container {
+    width: 400px;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f7 100%);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    color: #333;
+    /* 为了确保动画不会超出容器 */
+    margin-top: 30px;
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
+    /* 防止干扰按钮点击 */
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        /* 控制涟漪扩散的范围 */
+        opacity: 0;
+    }
+}
+
+.ip-container h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #222;
+    margin-top: -20px;
+    margin-left: 20%;
+}
+
+.join-ip {
+    font-size: 1.5em;
+    background-color: #e0e0e0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    user-select: all;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-top: 20px;
+}
+
+.join-copy-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007aff;
+    color: white;
+    border-radius: 12px;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.join-copy-button:hover {
+    background-color: #005bb5;
+}
+
+.mc-game-container {
+    width: 500px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    margin-left: 30px;
+    background-size: contain; /* 图片自适应缩放 */
+    background-position: center;
+    background-repeat: no-repeat; /* 防止图片重复 */
+}
+
+.mc-game-container h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #222;
+    margin-top: 20px;
+    margin-left: 27%;
+}
+
+.mc-game-options {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 280px;
+}
+
+.mc-game-option {
+    padding: 15px;
+    margin: 10px 0;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    font-weight: bold;
+}
+
+.mc-game-option-licensed {
+    background-color: #0071e3;
+}
+
+.mc-game-option-unlicensed {
+    background-color: #ff3b30;
+}
+
+.mc-game-option-expanded {
+    width: 380px;
+    padding: 40px;
+    font-size: 18px;
+}
+
+.mc-game-download-link {
+    margin-top: 20px;
+    display: block;
+    background-color: #0071e3;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.mc-game-reset {
+    margin-top: 20px;
+    background-color: #8e8e93;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+.mc-game-option-licensed {
+    background-image: url('https://s21.ax1x.com/2024/03/30/pFTDQHO.png');
+    /* 替换为你自己的图片链接 */
+}
+
+.mc-game-option-unlicensed {
+    background-image: url('https://s21.ax1x.com/2024/03/30/pFTD1ED.png');
+    /* 替换为你自己的图片链接 */
+}
+
+.version {
+    width: 400px;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f7 100%);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    color: #333;
+    margin-top: 30px;
+    height: 105px;
+    position: relative;
+    overflow: hidden;
+}
+
+.version h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #222;
+    margin-top: -30px;
+    margin-left: 30%;
+}
+
+.version-select {
+    font-size: 50px;
+    background-color: #e0e0e0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    user-select: all;
+    cursor: pointer;
+    margin-left: 24%;
+    margin-top: 10px;
+}
